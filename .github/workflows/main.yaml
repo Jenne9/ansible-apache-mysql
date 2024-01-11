@@ -2,15 +2,22 @@ name: Ansible arborescence deployement
 on: [push]
 jobs:
   deploy:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Create arborescence
-        run: |
-          cp -R ansible/ /home/student
-          cp .ansible.cfg /home/student
+      - name: upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ansible
+          path: ansible/
+
+      - name: download artifact
+        uses: actions/download-artifact@v4
+        with:
+          path: .
+          name: ansible
           
       - name: execute
         run: |    
