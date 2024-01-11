@@ -1,6 +1,6 @@
 ---
 - name: Installation Apache2
-  hosts: jenne9-server.eddi.cloud
+  hosts: ****
   remote_user: root
   roles:
     - apache
