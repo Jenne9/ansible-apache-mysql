@@ -8,4 +8,4 @@ recette-mysql recipe installed :
 - create a new user with a pwd
 - insert data into a table
 
-Into /playbooks/roles/mysql/tasks/main.yml and /etc/hosts, don't forget to replace every **** by your own datas.
+Don't forget to replace every **** by your own datas.
