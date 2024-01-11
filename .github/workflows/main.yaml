@@ -30,7 +30,9 @@ jobs:
         with:
           path: .
           name: .ansible.cfg
-            
+          
+      - name : debug
+        run : ls -alh
          
       - name: execute
         run: |    
