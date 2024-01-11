@@ -7,24 +7,31 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: upload artifact
+      - name: upload arborescence
         uses: actions/upload-artifact@v4
         with:
-          name: 
-            ansible 
-             .ansible.cfg
-          path: 
-            ansible/ 
-            .ansible.cfg
-
-      - name: download artifact
+          name: ansible 
+          path: ansible/ 
+          
+      - name: upload inventory
+        uses: actions/upload-artifact@v4
+        with:
+          name: .ansible.cfg
+          path: .ansible.cfg
+          
+      - name: download arborescence
         uses: actions/download-artifact@v4
         with:
           path: .
-          name: 
-            ansible 
-            .ansible.cfg
-          
+          name: ansible 
+
+      - name: download inventory
+        uses: actions/download-artifact@v4
+        with:
+          path: .
+          name: .ansible.cfg
+            
+         
       - name: execute
         run: |    
           cd ansible/playbooks
