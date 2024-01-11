@@ -2,7 +2,7 @@ name: Ansible arborescence deployement
 on: [push]
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
