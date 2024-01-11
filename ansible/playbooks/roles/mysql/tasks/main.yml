@@ -1,0 +1,33 @@
+---
+- name: Install mysql
+  ansible.builtin.apt:
+    pkg: 
+      - mysql-server
+      - python3-pymysql
+      - mysql-client
+      - percona-toolkit
+    state: present
+    update_cache: true
+
+- name: Create a new database 
+  community.mysql.mysql_db:
+    name: 
+      - ****
+    state: present
+    login_unix_socket: /var/run/mysqld/mysqld.sock
+    
+- name: Insert data into table
+  community.mysql.mysql_query:
+    login_db: ****
+    query: 
+    - [CREATE YOUR REQUETE HERE]
+    login_unix_socket: /var/run/mysqld/mysqld.sock
+    
+- name: Create database user with name and password
+  community.mysql.mysql_user:
+    name: ****
+    password: ****
+    login_unix_socket : /var/run/mysqld/mysqld.sock
+    priv: ****
+    state: present
+  

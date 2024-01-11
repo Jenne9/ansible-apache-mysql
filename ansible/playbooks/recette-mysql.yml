@@ -1,0 +1,6 @@
+---
+- name: Installation mysql
+  hosts: jenne9-server.eddi.cloud
+  remote_user: root
+  roles:
+    - mysql
