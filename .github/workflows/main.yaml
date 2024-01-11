@@ -10,14 +10,14 @@ jobs:
       - name: upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ansible
-          path: ansible/
+          name: ansible .ansible.cfg
+          path: ansible/ .ansible.cfg
 
       - name: download artifact
         uses: actions/download-artifact@v4
         with:
           path: .
-          name: ansible
+          name: ansible .ansible.cfg
           
       - name: execute
         run: |    
