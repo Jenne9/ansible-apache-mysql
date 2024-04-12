@@ -1,6 +1,6 @@
 ---
 - name: Installation Apache2
-  hosts: ****
+  hosts: localhost
   remote_user: root
   roles:
     - apache
