@@ -1,8 +1,8 @@
 ---
-- name: Installation Apache2
-  hosts: localhost
-  remote_user: root
-  roles:
-    - apache
-    
-    
+- hosts: "{{ groups['k8s_controlplanes'][0] }}"
+  become: yes
+  tasks:
+    - name: Copier le fichier local vers les hôtes distants
+      copy:
+        src: /playbooks/recette-mysql.yml  # Chemin du fichier local à copier
+        dest: /home/filigran
