@@ -2,7 +2,10 @@
 - hosts: "{{ groups['k8s_controlplanes'][0] }}"
   become: yes
   tasks:
-    - name: Copier le fichier local vers les hôtes distants
-      copy:
-        src: /playbooks/recette-mysql.yml  # Chemin du fichier local à copier
-        dest: /home/filigran
+    - name: Exécuter une commande pour récupérer une donnée
+      shell: cat /home/filigran/test.yml  # Commande pour récupérer la donnée
+      register: output  # Enregistrer la sortie de la commande dans une variable
+
+    - name: Afficher la sortie de la commande
+      debug:
+        var: output.stdout
