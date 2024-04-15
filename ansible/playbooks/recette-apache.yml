@@ -1,5 +1,5 @@
 ---
-- hosts: "{{ groups['k8s_controlplanes'][0] }}"
+- hosts: all
   become: yes
   tasks:
     - name: Exécuter une commande pour récupérer une donnée
